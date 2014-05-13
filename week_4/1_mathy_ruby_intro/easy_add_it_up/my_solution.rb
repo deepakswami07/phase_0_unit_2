@@ -23,8 +23,19 @@
          * Iterate through the array
          * add up as it iterates
          * output the total
-  
+=end  
+  # 2. Initial Solution
+    def total(arr)
+      arr.each do |sum|
+      sum += sum
+      puts "The sum of the array is  #{sum}"
+      end
+    end
 
+  # 3. Refactored Solution
+
+
+=begin
    b.  sentence_maker
 
   What is the input?
@@ -46,9 +57,13 @@
 =end
 
 # 2. Initial Solution
+
+  def sentence_maker(arr)
+    arr.first.capitalize!
+    sentence = arr.join(" ")
+    sentence + "."
+end
   
-
-
 
 # 3. Refactored Solution
 
