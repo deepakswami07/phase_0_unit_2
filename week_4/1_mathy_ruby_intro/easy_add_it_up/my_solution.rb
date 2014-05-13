@@ -8,7 +8,7 @@
 
 =begin
 1. Pseudocode
-   a.  Total
+   a.  total
   
    What is the input?
    The input in this case is an array
@@ -24,6 +24,7 @@
          * add up as it iterates
          * output the total
 =end  
+
   # 2. Initial Solution
   def total(arr)
       sum = arr.inject(0) { | num, total| num + total}
@@ -31,9 +32,13 @@
   end
 
   # 3. Refactored Solution
-
+  def total(arr)
+     sum = arr.inject(0) do | x, y| x + y end
+     return "Sum of Array: #{sum}"
+  end
 
 =begin
+   1. Pseudocode
    b.  sentence_maker
 
   What is the input?
@@ -64,16 +69,17 @@ end
   
 
 # 3. Refactored Solution
+  def sentence_maker(arr)
+    arr.first.capitalize!
+    sentence = arr.join(" ") + "."
+  end
 
+=begin
 
- 
-
-
-
-
-
-
-
-
-
-# 4. Reflection 
+ 4. Reflection 
+    The psuedocode part of the exercise did help me as to how I would approach to solve the problem.  
+    I still need to work on how best how to word my pseudocode, so that it does not read like code.
+    I did not have any problems, however, I did have to try out different versions of my code before
+    I got it to work.  I am sort of happy to be back in ruby after js. The exercise was prety straight
+    forward, but I did have to do some reading on rspec.
+=end
