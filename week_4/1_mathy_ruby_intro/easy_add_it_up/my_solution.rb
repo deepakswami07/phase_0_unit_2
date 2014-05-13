@@ -25,12 +25,10 @@
          * output the total
 =end  
   # 2. Initial Solution
-    def total(arr)
-      arr.each do |sum|
-      sum += sum
-      puts "The sum of the array is  #{sum}"
-      end
-    end
+  def total(arr)
+      sum = arr.inject(0) { | num, total| num + total}
+      puts "Sum of Array: #{sum}"
+  end
 
   # 3. Refactored Solution
 
