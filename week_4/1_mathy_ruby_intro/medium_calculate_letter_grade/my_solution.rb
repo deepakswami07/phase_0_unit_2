@@ -37,27 +37,41 @@ def get_grade(array)
     average = sum / (array.length)
     
     if average >= 90 
-    puts "A"
+    return "A"
     
     elsif average >= 80 
-    puts "B"
+    return "B"
     
     elsif average >= 70 
-    puts "C"
+    return "C"
     
     elsif average >= 60 
-    puts "D"
+    return "D"
     
     else return "F"
     end
 end
 
 
-
 # 3. Refactored Solution
 
+   def get_grade(array)
+    sum = array.inject(0) {|num, total| num + total}
+    average = sum / (array.length)
+
+     return "A" if average >= 90 
+     return "B" if average >= 80 
+     return "C" if average >= 70 
+     return "D" if average >= 60
+     return "F" if average <  60
+   end
 
 =begin
  4. Reflection 
+    This was a easy exercise.  I did not use any other resources or have trouble with 
+    either the concept of averages or how to code it in Ruby.  It was good warm up to
+    the other exercises which I presume will be challenging.  If I finish my work for
+    week 4 before the end of the week, I will try to tackle median and mode exercises.
+    I did have fun refactoring the code into single line if's.
 =end
 
