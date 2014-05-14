@@ -25,16 +25,22 @@
  * go over the array to store keys and values
  * find the element that is repeated the max times
 
+=end
 
 2. Initial Solution
-
-
+def mode(arr)
+  freq = Hash.new(0)
+  arr.each { |x| freq[x] += }
+  freq = freq.sort_by { |a,b| b}
+  
+  freq = freq.select { |x,y| y.last }
+  }
+end
 
 
 3. Refactored Solution
 
 
-
+=begin
 4. Reflection 
-
 =end
