@@ -28,13 +28,11 @@
   # 2. Initial Solution
   def total(arr)
       sum = arr.inject(0) { | num, total| num + total}
-      puts "Sum of Array: #{sum}"
   end
 
   # 3. Refactored Solution
   def total(arr)
-     sum = arr.inject(0) do | x, y| x + y end
-     return "Sum of Array: #{sum}"
+     sum = arr.inject(0) do | x, y| x + y end 
   end
 
 =begin
