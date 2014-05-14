@@ -31,7 +31,26 @@
 =end
 
 # 2. Initial Solution
-
+def get_grade(array)
+    
+    sum = array.inject(0) {|num, total| num + total}
+    average = sum / (array.length)
+    
+    if average >= 90 
+    puts "A"
+    
+    elsif average >= 80 
+    puts "B"
+    
+    elsif average >= 70 
+    puts "C"
+    
+    elsif average >= 60 
+    puts "D"
+    
+    else return "F"
+    end
+end
 
 
 
