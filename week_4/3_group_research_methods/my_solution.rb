@@ -20,10 +20,11 @@ end
    #array
     Identify and describe the ruby method you implemented. 
 
-    I used the map method, becuse it iterates over the array 
-    and then creates a new array. Next I checked the select
-    only the numbers in the array. Once it returned the number
-    I added the argument to the number
+    I used the each method, becuse it iterates over the array 
+    and. Next I used "is a integer" method to check only the 
+    numbers in the array. Once it returned the number I added
+    the argument to the number.  Finally I pushed it to a new
+    array.
 =end
 
     def my_array_modification_method(array,number)
