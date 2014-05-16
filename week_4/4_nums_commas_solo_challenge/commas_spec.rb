@@ -17,4 +17,5 @@ describe "separate_comma" do
    it "returns two commas, when the integer is between 1000000 and 999999999" do
       separate_comma(random_num(1000000, 999999999)).should match /^\d{1,3},\d{3},\d{3}$/
    end
+   
 end
