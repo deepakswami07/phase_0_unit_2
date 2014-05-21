@@ -25,61 +25,67 @@
 # 3. Initial Solution
 
 	class GuessingGame
+        attr_reader :guess_number
+        attr_reader :solved
 
-	    def initialize(integer)
-		  @answer = integer
-		  @last_guess = false
-		  raise ArgumentError.new("Enter an integer to continue") unless @answer != Integer
+	    def initialize(answer)
+	    	@answer = answer
+	    	raise Array.new("ERROR: enter integer only to continue") unless @answer != Integer
 	    end
 
-		def guess(guess_number)
-			@guess_number = guess_number
+	    def guess(guess_number)
+	    	@guess_number = guess_number
 
-	  	if  @answer < guess_number
-	  		@last_guess
-	  		return :high
-	  		
+	    	if guess_number > @answer
+	    		return :high
 
-	  	elsif @answer == guess_number
-	  		@last_guess = true
-	  		return :correct
-	  		
+	    	elsif guess_number == @answer
+	    		return :correct
 
-	  	else @answer > guess_number
-	  		@last_guess
-	  		return :low
-	  	end
-	  end
-
+	    	else guess_number < @answer
+	    		return :low
+	    	end
+	    end
+	    			
 	    def solved?
-	    	@last_guess
-	   end
+	    	@solved = false
+	    	if guess_number == @answer
+	    		return @solved = true
+	    	else
+	    		return @solved 
+	    	end
+	    end
 end
 
 
 # 4. Refactored Solution
-
 class GuessingGame
 
-	    def initialize(integer)
-		  @answer = integer
-		  @last_guess = false
+	    def initialize(answer)
+	    	@answer = answer
+	    	raise Array.new("ERROR: enter integer only to continue") unless @answer != Integer
 	    end
 
-		def guess(guess_number)
-	  	if  @answer < guess_number
-	  		return :high
-	  	elsif @answer == guess_number
-	  		@last_guess = true
-	  		return :correct
-	  	else @answer > guess_number
-	  		return :low
-	  	end
-	  end
+	    def guess(guess_number)
+	    	@guess_number = guess_number
 
+	    	case
+	    	when guess_number > @answer then :high
+	    	when guess_number == @answer then :correct
+	    	else
+	    	    :low
+	    	end
+	    end
+	    			
 	    def solved?
-	    	@last_guess
-	   end
+	    	@solved = false
+
+	    	case 
+	    	when guess_number == @answer then @solved = true
+	    	else
+	    		 @solved 
+	    	end
+	    end
 end
 
 
@@ -102,11 +108,17 @@ end
   
 # 5. Reflection 
 =begin
-	  This was good introduction to class.  I was wondering how even
-	  without setting the guess_number variable it still worked. I need
-	  to do more class problems to get a deeper understanding of how class
-	  works and how it is apllied.  Even though I did not use attr
-	  (reader, writer and accessor), I learned how they can be used.  
+	  This was good introduction to class. I need to do more class problems to
+	  get a deeper understanding of how class works and how it is apllied.
+	  The difficulty I faced with this challenge was I was getting two erros
+	  regarding the code in solved? I spent more than an hour on this and
+	  eventually called it a day.  The next day, I started all over again
+	  and it worked.  This was goos lesson, becuase usually I will continue
+	  till I am sucessful no matter how long it took. Overall, like every exercise
+	  I run into some problem and in the end it gets resolved.  I guess that is the
+	  way it is going to be. I did have fun refactoring!!!
+
+	
 =end
 	
 
