@@ -5,7 +5,7 @@
 # EXPLANATION OF require_relative
 # In order to run the code in this file(original_code), the code
 # present in the 'state_data' file is required.  In this example, the
-# input data is in a hash "STATE_DATA" is being used to run and the
+# input data in a hash "STATE_DATA" is being used to run and 
 # output the driver code.
 require_relative 'state_data'
 
