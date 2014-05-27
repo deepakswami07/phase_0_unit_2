@@ -70,7 +70,7 @@ class CreditCard
   end 
   
   def check_card
-    reverse_number = @number.to_s.split(//).map {|x| x.to_i }.reverse
+    reverse_number = @number.to_s.split(//).map(&:to_i).reverse
 
     odd = []
     even = []
@@ -82,7 +82,7 @@ class CreditCard
     odd = double_odd.map {|x| (x.to_s.length > 1) 
       x.to_s.split(//)
     }
-    b = odd.flatten.map {|i| i.to_i }
+    b = odd.flatten.map(&:to_i)
 
     even = even
     sum = even.concat(b).inject(0){|result, element| result + element}
