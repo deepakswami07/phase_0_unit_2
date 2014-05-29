@@ -1,7 +1,7 @@
 # U2.W6: PezDispenser Class from User Stories
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 # 1. Review the following user stories:
 # - As a pez user, I'd like to be able to "create" a new pez dispenser with a group of flavors that 
@@ -13,27 +13,81 @@
 # - As a pez user, I'd like to be able to see all the flavors inside the dispenser so I know the order 
 #      of the flavors coming up.
 
-
+=begin
 # 2. Pseudocode
+     SET Class PezDispenser
+     DEFINE a method initialize accept one parameter
+     DEFINE a method pez_count and use the count built-in method to count the number of elements in the array
+     DEFINE a method see_all_pez
+     DEFINE a method add_pez and use the unshift method to add to the array
+     DEFINE a method get_pez and use the shift method to remove the first element form the array
+=end
 
-
-
+=begin
 # 3. Initial Solution
 
-class PezDispenser
- 
-# your code here!
- 
-end
- 
+	class PezDispenser
+
+         attr_reader :flavor
+
+		def initialize(flavor)
+				@flavor = flavor
+		end
 
 
+		def pez_count
+				flavor.count
+		end
+
+
+		def see_all_pez
+				@flavor
+		end
+
+
+		def add_pez(new_flavor)
+				flavor.unshift(new_flavor)
+		end
+
+
+		def get_pez
+				flavor.shift
+		end
+
+	end
+
+=end
 # 4. Refactored Solution
+	class PezDispenser
+
+	         attr_reader :flavor
+	         attr_reader :pez_count
+
+			def initialize(flavor)
+					@flavor = flavor
+			end
 
 
+			def pez_count
+					flavor.count
+			end
 
 
+			def see_all_pez
+					@flavor
+			end
 
+
+			def add_pez(new_flavor)
+					flavor.unshift(new_flavor)
+			end
+
+
+			def get_pez
+					flavor.shift
+			end
+
+		end
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
@@ -48,8 +102,20 @@ puts "Now you have #{super_mario.pez_count} pez!"
 puts "Oh, you want one do you?"
 puts "The pez flavor you got is: #{super_mario.get_pez}"
 puts "Now you have #{super_mario.pez_count} pez!"
+puts "Adding a green pez."
+super_mario.add_pez("green")
+puts super_mario.see_all_pez 
+puts "Now you have #{super_mario.pez_count} pez!"
 
-
-
-
+	 
+=begin
 # 5. Reflection 
+     At first it seemed difficult but once I ran the driver test, it basically led
+     me to add methods one by one.  Once that was done, I swa the output without
+     the methods not haveing any tasks to complete.  Then I added the code to carry out
+     the task that matched the output.  I finally got to use shift and unshift methods
+     on an array.  This was another good example to get more comfortable with classes.
+     I could not much with refactor as the number of methods required matched the method
+     calls on the instance object "super_mario".
+
+=end
