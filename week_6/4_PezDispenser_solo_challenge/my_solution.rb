@@ -26,68 +26,67 @@
 =begin
 # 3. Initial Solution
 
-	class PezDispenser
+  class PezDispenser
 
          attr_reader :flavor
 
-		def initialize(flavor)
-				@flavor = flavor
-		end
+    def initialize(flavor)
+        @flavor = flavor
+    end
 
 
-		def pez_count
-				flavor.count
-		end
+    def pez_count
+        flavor.count
+    end
 
 
-		def see_all_pez
-				@flavor
-		end
+    def see_all_pez
+        @flavor
+    end
 
 
-		def add_pez(new_flavor)
-				flavor.unshift(new_flavor)
-		end
+    def add_pez(new_flavor)
+        flavor.unshift(new_flavor)
+    end
 
 
-		def get_pez
-				flavor.shift
-		end
+    def get_pez
+        flavor.shift
+    end
 
-	end
+  end
 
 =end
 # 4. Refactored Solution
-	class PezDispenser
+  class PezDispenser
 
-	         attr_reader :flavor
-	         attr_reader :pez_count
+           attr_reader :flavor, :pez_count
 
-			def initialize(flavor)
-					@flavor = flavor
-			end
-
-
-			def pez_count
-					flavor.count
-			end
+      def initialize(flavor)
+          @flavor = flavor
+      end
 
 
-			def see_all_pez
-					@flavor
-			end
+      def pez_count
+          @flavor.count
+      end
 
 
-			def add_pez(new_flavor)
-					flavor.unshift(new_flavor)
-			end
+      def see_all_pez
+          @flavor
+      end
 
 
-			def get_pez
-					flavor.shift
-			end
+      def add_pez(new_flavor)
+          @flavor.unshift(new_flavor)
+      end
 
-		end
+
+      def get_pez
+          @flavor.shift
+      end
+
+    end
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
@@ -107,7 +106,7 @@ super_mario.add_pez("green")
 puts super_mario.see_all_pez 
 puts "Now you have #{super_mario.pez_count} pez!"
 
-	 
+
 =begin
 # 5. Reflection 
      At first it seemed difficult but once I ran the driver test, it basically led
