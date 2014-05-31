@@ -107,15 +107,4 @@ assert { name == "billybob" }
      to a topic with a samll exercise to warm up and then this leads to other important topics.  I am 
      eager to learn how to write spec files to test along side writing code.  This was not tedious but
      the future challenges will be more so.
-
-
-
-
-
-
-
-
-
-
-
 =end
