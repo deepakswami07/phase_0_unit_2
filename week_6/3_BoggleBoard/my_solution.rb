@@ -99,12 +99,4 @@ end
   once the nested array was intialized, we could use it in the methods without having to
   to use it as a second argument.  I defintely became more comfortable with nested arrays.
   I can't say I am completely confident, but I am getting better by the day.  
-  
-
-
-
-
-
-
-
 =end
